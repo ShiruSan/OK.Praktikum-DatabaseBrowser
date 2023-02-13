@@ -1,9 +1,13 @@
 package de.adrian.ok.ddb.database;
 
 import com.mysql.cj.jdbc.MysqlDataSource;
-
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
 
 public class DatabaseManager {
     private final MysqlDataSource dataSource;

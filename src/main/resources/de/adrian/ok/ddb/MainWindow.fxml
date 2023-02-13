@@ -41,6 +41,7 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -62,7 +63,7 @@
       <items>
         <AnchorPane>
           <children>
-            <Label alignment="CENTER" layoutX="68.0" layoutY="14.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Datenbank" textAlignment="CENTER" wrapText="false">
+            <Label fx:id="viewLabel" alignment="CENTER" layoutY="14.0" minWidth="60.0" prefHeight="27.0" prefWidth="222.0" style="&#10;" text="Datenbank" textAlignment="CENTER" wrapText="false">
               <font>
                 <Font size="18.0" fx:id="x1" />
               </font>
@@ -80,6 +81,7 @@
             <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="546.0" prefWidth="663.0">
               <children>
                 <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="Ansicht" textAlignment="CENTER" wrapText="false" />
+                        <TableView fx:id="dbTable" editable="true" layoutY="54.0" prefHeight="493.0" prefWidth="661.0" />
               </children>
             </AnchorPane>
           </content>
