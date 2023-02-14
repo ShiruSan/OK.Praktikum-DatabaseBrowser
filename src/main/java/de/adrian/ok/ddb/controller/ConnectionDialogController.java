@@ -6,6 +6,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
 import javafx.scene.effect.ColorAdjust;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -55,6 +56,21 @@ public class ConnectionDialogController {
 
     public void onPortKeyTyped(KeyEvent keyEvent) {
         portLabel.setTextFormatter(new TextFormatter<>(new IntegerStringConverter()));
+    }
+
+    public void onKeyPressed(KeyEvent keyEvent) {
+        switch (keyEvent.getCode()) {
+            case ENTER:
+                onSubmitClicked(null);
+                break;
+
+            case UP:
+                break;
+
+            case DOWN:
+
+                break;
+        }
     }
 
 }

@@ -1,9 +1,8 @@
 package de.adrian.ok.ddb.controller;
 
-import com.mysql.cj.jdbc.result.ResultSetMetaData;
-import com.mysql.cj.result.Field;
 import de.adrian.ok.ddb.DatabaseBrowserApplication;
 import de.adrian.ok.ddb.database.DatabaseManager;
+import de.adrian.ok.ddb.database.Table;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -71,47 +70,26 @@ public class MainController {
     }
 
     public void onItemlistClicked(MouseEvent mouseEvent) {
+        if(itemList.getSelectionModel().getSelectedItem() == null) return;
         if(tableView) {
+            String tableName = itemList.getSelectionModel().getSelectedItem();
             dbTable.getItems().clear();
-
-            String table = itemList.getSelectionModel().getSelectedItem();
-            try(Connection connection = DatabaseManager.get().getConnection(); PreparedStatement statement =  connection.prepareStatement("SELECT * from `" + table + "` LIMIT ?;")) {
+            dbTable.getColumns().clear();
+            try(Connection connection = DatabaseManager.get().getConnection(); PreparedStatement statement =  connection.prepareStatement("SELECT * from `" + tableName + "` LIMIT ?;")) {
                 statement.setInt(1, 15);
-                ResultSet set = statement.executeQuery();
-                ResultSetMetaData metaData = (ResultSetMetaData) set.getMetaData();
-                ObservableList<String> data = FXCollections.observableArrayList();
-                for(int i = 0; i < metaData.getColumnCount(); i++) {
-                    final int j = i;
-                    TableColumn col = new TableColumn(metaData.getColumnName(i+1));
-                    col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<ObservableList,String>, ObservableValue<String>>(){
-                        public ObservableValue<String> call(TableColumn.CellDataFeatures<ObservableList, String> param) {
-                            return new SimpleStringProperty(param.getValue().get(j).toString());
-                        }
-                    });
-
-                    while(set.next()){
-                        //Iterate Row
-                        ObservableList<String> row = FXCollections.observableArrayList();
-                        for(i = 1 ; i<=set.getMetaData().getColumnCount(); i++){
-                            //Iterate Column
-                            row.add(set.getString(i));
-                        }
-                        System.out.println("Row [1] added "+row );
-                        data.add(row.toString());
-
-                    }
-
-                    dbTable.setItems(data);
-
+                Table table = new Table(statement.executeQuery());
+                for(int i = 0; i < table.getColumnLength(); i++) {
+                    TableColumn col = new TableColumn(table.getColumnName(i));
+                    int finalI = i;
+                    col.setCellValueFactory((Callback<TableColumn.CellDataFeatures<ObservableList, String>, ObservableValue<String>>) param -> new SimpleStringProperty(param.getValue().get(finalI).toString()));
                     dbTable.getColumns().addAll(col);
-                    System.out.println("Column ["+i+"] ");
                 }
+                dbTable.setItems(table.asObservableList());
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
         } else {
             String database = itemList.getSelectionModel().getSelectedItem();
-            if(database == null) return;
             DatabaseManager.get().setDatabase(database);
             try(Connection connection = DatabaseManager.get().getConnection(); PreparedStatement statement = connection.prepareStatement("SHOW TABLES;")) {
                 ResultSet set = statement.executeQuery();

@@ -1,18 +1,18 @@
-# OK.Praktikum-DatabaseBrowser
+# OK Praktikum DatabaseBrowser
 
-Ein Datenbank Browser, der sich mit einer Mysql Datenbank verbinden, ihren Inhalt anzeigen und bearbeiten kann. <br>
+Ein Datenbankbrowser, der sich mit einer Mysql Datenbank verbinden, ihren Inhalt anzeigen und bearbeiten kann. <br>
 Um den Entwicklungsprozess in kleinere Arbeitsschritte zu unterteilen und einen Überblick über Inhalt und Anforderungen dieser zu erhalten,
-wurden diese Arbeitsschritte unter Tickets (weiterläufig Schritte genannt) mithilfe eines internen Ticketsystems verfasst.
+wurden diese Arbeitsschritte unter Tickets (weiter läufig Schritte genannt) mithilfe eines internen Ticketsystems verfasst.
 
 ## Schritt 1
 ### Verbindung zur Datenbank erstellen und aufbauen
 
-Das Programm soll den Nutzer nach den Verbindungsdaten für die Datenbank-Server (Serveraddresse, Port, Benutzer und Passwort) und diese nutzen um eine Verbindung aufzubauen.
+Das Programm soll den Nutzer nach den Verbindungsdaten für die Datenbank-Server (Serveradresse, Port, Benutzer und Passwort) und diese nutzen, um eine Verbindung aufzubauen.
 Bei erfolgreicher Verbindung soll das Programm die vorhandenen Datenbanken in einer Liste anzeigen.
 Ein Statustext zeigt bei erfolgloser Verbindung dies an und soll bei Bedarf mehr Information zum Fehler anzeigen.
 
 Akzeptanzkriterien:
- - Eingaben des Benutzer werden validiert
+ - Eingaben des Benutzers werden validiert
  - Datenbank Verbindung wird hergestellt und bei Erfolg oder Fehlschlag im Status angezeigt
  - Bei Fehler soll die Statusanzeige beim Anklicken den Fehler anzeigen
  
@@ -34,7 +34,7 @@ Akzeptanzkriterien:
  ## Schritt 3
  ### Tabellen Struktur und Inhalt auslesen
  
- Das Programm muss bevor es die Daten korrekt auslesen kann die Struktur der Tabelle kennen um die unterschiedlichen Datentypen richtig anzuzeigen.
+ Das Programm muss bevor es die Daten korrekt auslesen kann die Struktur der Tabelle kennen, um die unterschiedlichen Datentypen richtig anzuzeigen.
  Eine Recherche zu den SQL-Befehlen und ihrer Implementation muss für diese Aufgabe gemacht werden.
 
 Akzeptanzkriterien:
