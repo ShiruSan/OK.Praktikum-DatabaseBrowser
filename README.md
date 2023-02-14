@@ -16,7 +16,7 @@ Akzeptanzkriterien:
  - Datenbank Verbindung wird hergestellt und bei Erfolg oder Fehlschlag im Status angezeigt
  - Bei Fehler soll die Statusanzeige beim Anklicken den Fehler anzeigen
  
- ### *Abgeschlossen mit Commit [dd84da8](https://github.com/ShiruSan/OK.Praktikum-DatabaseBrowser/commit/dd84da8c57136aa234399a9e9185a123f64499b3)* :white_check_mark:
+ ### *Abgeschlossen mit Commit [36e0643](https://github.com/ShiruSan/OK.Praktikum-DatabaseBrowser/commit/36e0643194085bb612852f710f68a857979b9544)* :white_check_mark:
  
  ## Schritt 2
  ### Tabellen einer Datenbank anzeigen
