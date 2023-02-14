@@ -16,7 +16,7 @@ Akzeptanzkriterien:
  - Datenbank Verbindung wird hergestellt und bei Erfolg oder Fehlschlag im Status angezeigt
  - Bei Fehler soll die Statusanzeige beim Anklicken den Fehler anzeigen
  
- ### *Abgeschlossen mit Commit [36e0643](https://github.com/ShiruSan/OK.Praktikum-DatabaseBrowser/commit/36e0643194085bb612852f710f68a857979b9544)* :white_check_mark:
+ ### *Abgeschlossen mit Commit [36e0643](https://github.com/ShiruSan/OK.Praktikum-DatabaseBrowser/commit/36e0643)* :white_check_mark:
  
  ## Schritt 2
  ### Tabellen einer Datenbank anzeigen
@@ -29,7 +29,7 @@ Akzeptanzkriterien:
  - anklickbarer Label zum Verlassen der Tabellenansicht wird hinzugefügt
  - Die Tabellen der Datenbank werden angezeigt
  
-  ### *Abgeschlossen mit Commit [dd84da8](https://github.com/ShiruSan/OK.Praktikum-DatabaseBrowser/commit/dd84da8c57136aa234399a9e9185a123f64499b3)* :white_check_mark:
+  ### *Abgeschlossen mit Commit [dd84da8](https://github.com/ShiruSan/OK.Praktikum-DatabaseBrowser/commit/dd84da8)* :white_check_mark:
  
  ## Schritt 3
  ### Tabellen Struktur und Inhalt auslesen
@@ -41,6 +41,8 @@ Akzeptanzkriterien:
  - Auslesung der Tabellenstruktur und Umwandlung in ein programm-internes Objekt (eigene Klasse)
  - Aufbau des UI für die Tabellendarstellung
  - ggf. Datenumwandlung und anschließende Darstellung der Tabellendaten
+ 
+ ### *Abgeschlossen mit Commit [7f993a4](https://github.com/ShiruSan/OK.Praktikum-DatabaseBrowser/commit/7f993a4)* :white_check_mark:
  
  ## Schritt 4
  ### Benutzerrechte auslesen
